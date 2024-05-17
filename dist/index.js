@@ -27880,9 +27880,6 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 try {
     const story = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('story');
 
-    // Install Laravel Envoy
-    await (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.exec)('composer require laravel/envoy --dev')
-
     // Deploy
     await (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.exec)('./vendor/bin/envoy run ' + story)
 } catch (error) {
