@@ -1,4 +1,5 @@
 name: 'Deploy with Envoy'
+author: 'dasundev'
 description: 'Easily deploy your Laravel app using the automated Envoy task runner.'
 inputs:
   story:
