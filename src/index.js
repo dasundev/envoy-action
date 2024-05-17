@@ -8,7 +8,7 @@ try {
     await exec('composer require laravel/envoy --dev')
 
     // Deploy
-    await exec('./vendor/bin/envoy run' + story)
+    await exec('./vendor/bin/envoy run ' + story)
 } catch (error) {
     core.setFailed(error.message);
 }
