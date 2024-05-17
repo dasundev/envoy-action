@@ -1,25 +1,11 @@
 import { exec } from '@actions/exec'
 import * as core from '@actions/core';
 
-async function installEnvoy() {  
-    await exec('composer require laravel/envoy --dev')
-}
+try {
+    const nameToGreet = core.getInput('who-to-greet');
 
-async function deploy(story) {  
-    await exec('./vendor/bin/envoy ' + story)
-}
-
-async function run() {
-    const story = core.getInput('story')
-
-    console.log(story)
-    
-    // await installEnvoy()
-    // await deploy(story)
-}
-
-(async () => {
-    await run()
-})().catch(error => {
+    console.log(`Hello ${nameToGreet}!`);
+} catch(error) {
+    // Handle errors and indicate failure
     core.setFailed(error.message);
-})
+}
