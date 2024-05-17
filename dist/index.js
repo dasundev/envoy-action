@@ -27915,10 +27915,10 @@ var __webpack_exports__ = {};
 
 
 try {
-    const nameToGreet = _actions_core__WEBPACK_IMPORTED_MODULE_1__.core.getInput('who-to-greet');
+    const nameToGreet = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('who-to-greet');
     console.log(`Hello ${nameToGreet}!`);
 } catch (error) {
-    _actions_core__WEBPACK_IMPORTED_MODULE_1__.core.setFailed(error.message);
+    _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(error.message);
 }
 })();
 
