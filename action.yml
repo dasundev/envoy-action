@@ -2,4 +2,4 @@ name: 'Deploy with Envoy'
 description: 'Easily deploy your Laravel app using the automated Envoy task runner.'
 runs:
   using: 'node20'
-  main: 'src/index.js'
+  main: 'dist/index.js'
