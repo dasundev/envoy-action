@@ -46,5 +46,7 @@ jobs:
 
       - name: Run Laravel Envoy
         uses: dasundev/envoy-action@beta
+        with:
+          story: deploy
 ```
 
