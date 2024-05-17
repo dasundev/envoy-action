@@ -1,0 +1,26 @@
+import * as fs from 'fs'
+
+export async function getServers() {
+    const content = await fs.readFileSync('Envoy.blade.php', 'utf8')
+
+    const serverRegex = /@servers\(\[(.*?)\]\)/s;
+
+    const serverMatch = content.match(serverRegex);
+
+    if (serverMatch && serverMatch[1]) {
+        const serverContent = serverMatch[1];
+        
+        const pairRegex = /'[^']+' => '([^']+)'/g;
+        
+        const matches = [];
+        let match;
+        
+        while ((match = pairRegex.exec(serverContent)) !== null) {
+            matches.push(match[1]);
+        }
+        
+        console.log(matches);
+    } else {
+        console.log('No server found');
+    }
+}
