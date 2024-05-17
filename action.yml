@@ -3,7 +3,7 @@ author: 'dasundev'
 description: 'Easily deploy your Laravel app using the automated Envoy task runner.'
 branding:
   color: 'orange'
-  icon: 'play-circle'
+  icon: 'upload-cloud'
 inputs:
   story:
     description: 'Name of the story'
