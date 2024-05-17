@@ -4,6 +4,7 @@ inputs:
   story:
     description: 'Name of the story'
     required: true
+    default: 'deploy'
 runs:
   using: 'node20'
   main: 'dist/index.js'

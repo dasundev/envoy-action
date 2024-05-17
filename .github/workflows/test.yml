@@ -13,5 +13,3 @@ jobs:
         run: npm run build
       - name: Run Envoy
         uses: ./
-        with:
-          story: 'deploy'
