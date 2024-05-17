@@ -1,5 +1,9 @@
 name: 'Deploy with Envoy'
 description: 'Easily deploy your Laravel app using the automated Envoy task runner.'
+inputs:
+  story:
+    description: 'Name of the story'
+    required: true
 runs:
   using: 'node20'
   main: 'dist/index.js'
