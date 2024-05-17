@@ -1,5 +1,4 @@
 import * as fs from 'fs'
-import * as constants from './constants.js'
 
 export async function getServers() {
     const ENVOY_FILE = 'Envoy.blade.php'
