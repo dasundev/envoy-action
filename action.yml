@@ -6,7 +6,7 @@ branding:
   icon: 'upload-cloud'
 inputs:
   story:
-    description: 'Name of the story'
+    description: 'Name of the story.'
     required: true
     default: 'deploy'
 runs:
