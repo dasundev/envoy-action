@@ -27874,62 +27874,22 @@ module.exports = parseParams
 __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(1514);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(2186);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(7255);
 
 
 
+try {
+    const story = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput('story');
 
-await _utils_js__WEBPACK_IMPORTED_MODULE_2__/* .getServers */ .M()
+    // Install Laravel Envoy
+    await (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.exec)('composer require laravel/envoy --dev')
 
-// try {
-//     const story = core.getInput('story');
-
-//     // Install Laravel Envoy
-//     await exec('composer require laravel/envoy --dev')
-
-//     // Deploy
-//     await exec('./vendor/bin/envoy run ' + story)
-// } catch (error) {
-//     core.setFailed(error.message);
-// }
+    // Deploy
+    await (0,_actions_exec__WEBPACK_IMPORTED_MODULE_0__.exec)('./vendor/bin/envoy run ' + story)
+} catch (error) {
+    _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(error.message);
+}
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } }, 1);
-
-/***/ }),
-
-/***/ 7255:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
-
-/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
-/* harmony export */   "M": () => (/* binding */ getServers)
-/* harmony export */ });
-/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7147);
-
-
-async function getServers() {
-    const content = await fs__WEBPACK_IMPORTED_MODULE_0__.readFileSync('Envoy.blade.php', 'utf8')
-
-    const serverRegex = /@servers\(\[(.*?)\]\)/s;
-
-    const serverMatch = content.match(serverRegex);
-
-    if (serverMatch && serverMatch[1]) {
-        const serverContent = serverMatch[1];
-        
-        const pairRegex = /'[^']+' => '([^']+)'/g;
-        
-        const matches = [];
-        let match;
-        
-        while ((match = pairRegex.exec(serverContent)) !== null) {
-            matches.push(match[1]);
-        }
-        
-        console.log(matches);
-    } else {
-        console.log('No server found');
-    }
-}
 
 /***/ })
 
@@ -28033,23 +27993,6 @@ async function getServers() {
 /******/ 		}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
 /******/ 		queue && (queue.d = 0);
 /******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/define property getters */
-/******/ (() => {
-/******/ 	// define getter functions for harmony exports
-/******/ 	__nccwpck_require__.d = (exports, definition) => {
-/******/ 		for(var key in definition) {
-/******/ 			if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
-/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 			}
-/******/ 		}
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/hasOwnProperty shorthand */
-/******/ (() => {
-/******/ 	__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/compat */
