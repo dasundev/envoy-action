@@ -5,6 +5,6 @@
     "@actions/github": "^6.0.0"
   },
   "scripts": {
-    "build": "ncc build src/index.js -o dist"
+    "build": "ncc build src/index.js -o dist/index.cjs"
   }
 }
