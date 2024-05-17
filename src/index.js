@@ -1,5 +1,5 @@
 import { exec } from '@actions/exec'
-import { core } from '@actions/core'
+import * as core from '@actions/core'
 
 try {
     const nameToGreet = core.getInput('who-to-greet');
