@@ -2,7 +2,7 @@ import { exec } from '@actions/exec'
 import * as core from '@actions/core'
 import * as utils from './utils.js'
 
-await utils.getServers()
+const servers = await utils.getServers()
 
 // try {
 //     const story = core.getInput('story');
