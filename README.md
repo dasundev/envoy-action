@@ -16,10 +16,10 @@ While Envoy is typically used locally, converting it to a GitHub action streamli
 ```yaml
 name: CI
 
-on: 
-    push:
-        branches:
-            - main
+on:
+  push:
+    branches:
+      - main
 
 
 jobs:
