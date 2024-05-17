@@ -11,9 +11,11 @@ async function deploy(story) {
 
 async function run() {
     const story = core.getInput('story')
+
+    console.log(story)
     
-    await installEnvoy()
-    await deploy(story)
+    // await installEnvoy()
+    // await deploy(story)
 }
 
 (async () => {
