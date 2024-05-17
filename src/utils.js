@@ -1,7 +1,10 @@
 import * as fs from 'fs'
+import * as constants from './constants.js'
 
 export async function getServers() {
-    const content = await fs.readFileSync('Envoy.blade.php', 'utf8')
+    const ENVOY_FILE = 'Envoy.blade.php'
+
+    const content = await fs.readFileSync(ENVOY_FILE, 'utf8')
 
     const serverRegex = /@servers\(\[(.*?)\]\)/s;
 
